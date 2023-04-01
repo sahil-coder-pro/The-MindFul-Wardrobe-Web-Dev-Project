@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		form {
+			background-color: #f2f2f2;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			margin: 50px auto;
+			max-width: 400px;
+		}
+
+		input[type="text"], input[type="password"] {
+			width: 100%;
+			padding: 10px;
+			margin: 10px 0;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 0;
+		}
+
+		p.error-message {
+			color: red;
+			margin-top: 10px;
+			text-align: center;
+		}
+		/* Center the form horizontally */
+form {
+    width: 400px;
+    margin: 50px auto;
+}
+
+/* Add some spacing between form elements */
+label, input[type="text"], input[type="password"], input[type="submit"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Increase the font size and weight of the form heading */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Add a subtle background color to form elements */
+input[type="text"], input[type="password"] {
+    background-color: #f9f9f9;
+}
+
+/* Style the submit button with a gradient background and hover effect */
+input[type="submit"] {
+    background-color: #0099cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom, #0099cc, #0088b3);
+}
+
+input[type="submit"]:hover {
+    background-image: linear-gradient(to bottom, #0088b3, #007399);
+}
+
+/* Add a box shadow to the form for a 3D effect */
+form {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Add a background image to the page */
+body {
+    background-image: url('background-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+	</style>
+</head>
+<body>
+	<form id="login-form" onsubmit="return validateForm()">
+		<h1>Login</h1>
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" required>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required>
+		<input type="submit" value="Login">
+		<p id="error-message" class="error-message"></p>
+	</form>
+	<script>
+		function validateForm() {
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+
+			if (username == "" || password == "") {
+				document.getElementById("error-message").innerHTML = "Please enter a username and password.";
+				return false;
+			} else {
+				return true;
+			}
+		}
+	</script>
+</body>
+</html>
